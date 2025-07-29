@@ -1,0 +1,71 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 2em;
+}
+.select2-container {
+  width: 300px !important;
+}
+select {
+  font-size: 1.2em;
+  margin: 0.5em;
+  padding: 1em;
+}
+#result,
+.yomi {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.select2-search--dropdown .select2-search__field {
+  padding: 8px;
+}
+/* スマホ用スタイル */
+/* stylelint-disable-next-line */
+@media screen and (max-width: 768px) {
+  body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2em;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  select,
+  .select2-container {
+    width: 100% !important;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+
+  button {
+    font-size: 1.2em;
+    margin: 0.5em;
+    padding: 0.6em 1.2em;
+  }
+
+  label,
+  .yomi,
+  #result {
+    display: block;
+    margin: 0.5em 0;
+  }
+  .select2-container .select2-selection--single {
+    height: 48px;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 28px;
+    border-radius: 8px;
+  }
+  .select2-container {
+    width: 100% !important;
+    max-width: 500px;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>元号比較ツール</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="江戸時代からの元号を比較するツールです。"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>江戸〜元号の新しさ比較ツール</h1>
+
+      <label for="era1">1つ目の元号：</label>
+      <select id="era1"></select>
+      <div class="yomi" id="yomi1">（よみがな表示）</div>
+
+      <br />
+
+      <label for="era2">2つ目の元号：</label>
+      <select id="era2"></select>
+      <div class="yomi" id="yomi2">（よみがな表示）</div>
+      <br />
+      <div
+        id="result"
+        style="margin-top: 1em; font-size: 1.4em; font-weight: bold"
+      ></div>
+      <button @click="goToList">元号一覧へジャンプ</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      Vue.createApp({
+        methods: {
+          goToList() {
+            window.location.href = "list.html";
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
