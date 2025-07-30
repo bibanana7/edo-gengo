@@ -12,19 +12,53 @@
   </head>
   <body>
     <div id="app">
-      <h1>📜 元号一覧</h1>
-      <button @click="sortByYomi">
-        読み仮名で並び替え（{{ sortOrder === 'asc' ? 'あ→ん' : 'ん→あ' }}）
-      </button>
-      <button @click="resetToOriginalOrder">年号順に戻す</button>
+      <h1>元号一覧</h1>
+      <div class="buttons">
+        <button @click="sortByYomi">
+          <span
+            >読み仮名で並び替え（{{ sortOrder === 'asc' ? 'あ→ん' : 'ん→あ'
+            }}）</span
+          >
+        </button>
+        <button @click="resetToOriginalOrder"><span>年号順に戻す</span></button>
+      </div>
       <table>
-        <tr v-for="era in eraList" :key="era.name">
-          <td><strong>{{ era.name }}</strong></td>
-          <td>{{ era.yomi }}</td>
-          <td>{{ era.year }}年〜</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>元号</th>
+            <th>よみがな</th>
+            <th>開始年</th>
+            <th>干支（クリックで年ごとに展開）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template
+            v-for="(era, index) in eraList"
+            :key="era.name + '-' + index"
+          >
+            <tr @click="toggleEto(era.name)" style="cursor: pointer">
+              <td><strong>{{ era.name }}</strong></td>
+              <td>{{ era.yomi }}</td>
+              <td>{{ era.startYear }}年〜</td>
+              <td>{{ era.startEto }}</td>
+            </tr>
+
+            <!-- 干支年表示 -->
+            <tr v-if="expandedEra === era.name">
+              <td colspan="4">
+                <ul>
+                  <li v-for="yearData in getEtoYears(era)" :key="yearData.year">
+                    {{ era.name }}{{ yearData.gengouYear === 1 ? '元' :
+                    yearData.gengouYear }}年：{{ yearData.eto }}
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </template>
+        </tbody>
       </table>
-      <button @click="goToList">元号比較ツールへジャンプ</button>
+
+      <button @click="goToList"><span>元号比較ツールへジャンプ</span></button>
     </div>
     <script src="script.js"></script>
     <!-- Vue.js CDN -->
@@ -33,12 +67,98 @@
       Vue.createApp({
         data() {
           return {
-            eraList: [...eraList], // 外部のeraListをコピーして使う
-            originalEraList: [...eraList], // 元順保持用にもコピー
+            eraList: [...eraList],
+            originalEraList: [...eraList],
             sortOrder: "asc",
+            expandedEra: null, // どの元号を開いてるか記録
           };
         },
         methods: {
+          toggleEto(name) {
+            this.expandedEra = this.expandedEra === name ? null : name;
+          },
+          getEtoYears(era) {
+            const etoList = [
+              "甲子",
+              "乙丑",
+              "丙寅",
+              "丁卯",
+              "戊辰",
+              "己巳",
+              "庚午",
+              "辛未",
+              "壬申",
+              "癸酉",
+              "甲戌",
+              "乙亥",
+              "丙子",
+              "丁丑",
+              "戊寅",
+              "己卯",
+              "庚辰",
+              "辛巳",
+              "壬午",
+              "癸未",
+              "甲申",
+              "乙酉",
+              "丙戌",
+              "丁亥",
+              "戊子",
+              "己丑",
+              "庚寅",
+              "辛卯",
+              "壬辰",
+              "癸巳",
+              "甲午",
+              "乙未",
+              "丙申",
+              "丁酉",
+              "戊戌",
+              "己亥",
+              "庚子",
+              "辛丑",
+              "壬寅",
+              "癸卯",
+              "甲辰",
+              "乙巳",
+              "丙午",
+              "丁未",
+              "戊申",
+              "己酉",
+              "庚戌",
+              "辛亥",
+              "壬子",
+              "癸丑",
+              "甲寅",
+              "乙卯",
+              "丙辰",
+              "丁巳",
+              "戊午",
+              "己未",
+              "庚申",
+              "辛酉",
+              "壬戌",
+              "癸亥",
+            ];
+            const result = [];
+            const startIndex = etoList.indexOf(era.startEto);
+            if (startIndex === -1) return result;
+
+            for (
+              let year = era.startYear;
+              year <= (era.endYear || era.startYear);
+              year++
+            ) {
+              const index = (startIndex + (year - era.startYear)) % 60;
+              result.push({
+                year: year,
+                eto: etoList[index],
+                gengouYear: year - era.startYear + 1, // 元年 → 1年、2年…
+              });
+            }
+
+            return result;
+          },
           sortByYomi() {
             if (this.sortOrder === "asc") {
               this.eraList.sort((a, b) => a.yomi.localeCompare(b.yomi, "ja"));
@@ -57,6 +177,10 @@
           },
         },
       }).mount("#app");
+
+      // 元データから情報を取り出し
+      const era = window.eraList[0];
+      const { startYear, endYear, startEto } = era;
     </script>
   </body>
 </html>

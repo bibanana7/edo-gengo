@@ -1,7 +1,27 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+:root {
+  --main-color: #6088c6;
+  --secondary-color: #eb8686;
+}
+
 body {
-  font-family: sans-serif;
   text-align: center;
   padding: 2em;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1.6rem;
 }
 .select2-container {
   width: 300px !important;
@@ -19,12 +39,68 @@ select {
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
   margin: 0 auto;
 }
+table tr {
+  background-color: #e6f1f6;
+}
+table tr:nth-child(odd) {
+  background-color: #fff;
+}
+table th,
+table td {
+  padding: 1em;
+}
+table th {
+  font-weight: bold;
+  text-align: center;
+  width: 20%;
+  min-width: 4em;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 2rem 0;
+}
+button {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 1.5rem 6rem;
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
 .select2-search--dropdown .select2-search__field {
   padding: 8px;
+}
+.era1 {
+  color: var(--main-color);
+}
+.era2 {
+  color: var(--secondary-color);
 }
 /* スマホ用スタイル */
 /* stylelint-disable-next-line */

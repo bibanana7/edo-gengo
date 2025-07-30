@@ -1,129 +1,289 @@
 window.eraList = [
-  { name: "慶長", year: 1596, yomi: "けいちょう" },
-  { name: "元和", year: 1615, yomi: "げんな" },
-  { name: "寛永", year: 1624, yomi: "かんえい" },
-  { name: "正保", year: 1644, yomi: "しょうほう" },
-  { name: "慶安", year: 1648, yomi: "けいあん" },
-  { name: "承応", year: 1652, yomi: "じょうおう" },
-  { name: "明暦", year: 1655, yomi: "めいれき" },
-  { name: "万治", year: 1658, yomi: "まんじ" },
-  { name: "寛文", year: 1661, yomi: "かんぶん" },
-  { name: "延宝", year: 1673, yomi: "えんぽう" },
-  { name: "天和", year: 1681, yomi: "てんな" },
-  { name: "貞享", year: 1684, yomi: "じょうきょう" },
-  { name: "元禄", year: 1688, yomi: "げんろく" },
-  { name: "宝永", year: 1704, yomi: "ほうえい" },
-  { name: "正徳", year: 1711, yomi: "しょうとく" },
-  { name: "享保", year: 1716, yomi: "きょうほう" },
-  { name: "元文", year: 1736, yomi: "げんぶん" },
-  { name: "寛保", year: 1741, yomi: "かんぽう" },
-  { name: "延享", year: 1744, yomi: "えんきょう" },
-  { name: "寛延", year: 1748, yomi: "かんえん" },
-  { name: "宝暦", year: 1751, yomi: "ほうれき" },
-  { name: "明和", year: 1764, yomi: "めいわ" },
-  { name: "安永", year: 1772, yomi: "あんえい" },
-  { name: "天明", year: 1781, yomi: "てんめい" },
-  { name: "寛政", year: 1789, yomi: "かんせい" },
-  { name: "享和", year: 1801, yomi: "きょうわ" },
-  { name: "文化", year: 1804, yomi: "ぶんか" },
-  { name: "文政", year: 1818, yomi: "ぶんせい" },
-  { name: "天保", year: 1830, yomi: "てんぽう" },
-  { name: "弘化", year: 1844, yomi: "こうか" },
-  { name: "嘉永", year: 1848, yomi: "かえい" },
-  { name: "安政", year: 1854, yomi: "あんせい" },
-  { name: "万延", year: 1860, yomi: "まんえん" },
-  { name: "文久", year: 1861, yomi: "ぶんきゅう" },
-  { name: "元治", year: 1864, yomi: "げんじ" },
-  { name: "慶応", year: 1865, yomi: "けいおう" },
-  { name: "明治", year: 1868, yomi: "めいじ" },
-  { name: "大正", year: 1912, yomi: "たいしょう" },
-  { name: "昭和", year: 1926, yomi: "しょうわ" },
-  { name: "平成", year: 1989, yomi: "へいせい" },
-  { name: "令和", year: 2019, yomi: "れいわ" },
+  {
+    name: "慶長",
+    startYear: 1596,
+    endYear: 1614,
+    yomi: "けいちょう",
+    startEto: "丙申",
+  },
+  {
+    name: "元和",
+    startYear: 1615,
+    endYear: 1623,
+    yomi: "げんな",
+    startEto: "乙卯",
+  },
+  {
+    name: "寛永",
+    startYear: 1624,
+    endYear: 1643,
+    yomi: "かんえい",
+    startEto: "癸未",
+  },
+  {
+    name: "正保",
+    startYear: 1644,
+    endYear: 1647,
+    yomi: "しょうほう",
+    startEto: "甲申",
+  },
+  {
+    name: "慶安",
+    startYear: 1648,
+    endYear: 1651,
+    yomi: "けいあん",
+    startEto: "戊子",
+  },
+  {
+    name: "承応",
+    startYear: 1652,
+    endYear: 1654,
+    yomi: "じょうおう",
+    startEto: "壬辰",
+  },
+  {
+    name: "明暦",
+    startYear: 1655,
+    endYear: 1657,
+    yomi: "めいれき",
+    startEto: "乙未",
+  },
+  {
+    name: "万治",
+    startYear: 1658,
+    endYear: 1660,
+    yomi: "まんじ",
+    startEto: "戊戌",
+  },
+  {
+    name: "寛文",
+    startYear: 1661,
+    endYear: 1672,
+    yomi: "かんぶん",
+    startEto: "辛丑",
+  },
+  {
+    name: "延宝",
+    startYear: 1673,
+    endYear: 1680,
+    yomi: "えんぽう",
+    startEto: "庚申",
+  },
+  {
+    name: "天和",
+    startYear: 1681,
+    endYear: 1683,
+    yomi: "てんな",
+    startEto: "辛酉",
+  },
+  {
+    name: "貞享",
+    startYear: 1684,
+    endYear: 1687,
+    yomi: "じょうきょう",
+    startEto: "甲子",
+  },
+  {
+    name: "元禄",
+    startYear: 1688,
+    endYear: 1703,
+    yomi: "げんろく",
+    startEto: "戊辰",
+  },
+  {
+    name: "宝永",
+    startYear: 1704,
+    endYear: 1710,
+    yomi: "ほうえい",
+    startEto: "甲申",
+  },
+  {
+    name: "正徳",
+    startYear: 1711,
+    endYear: 1715,
+    yomi: "しょうとく",
+    startEto: "辛卯",
+  },
+  {
+    name: "享保",
+    startYear: 1716,
+    endYear: 1735,
+    yomi: "きょうほう",
+    startEto: "丙申",
+  },
+  {
+    name: "元文",
+    startYear: 1736,
+    endYear: 1740,
+    yomi: "げんぶん",
+    startEto: "丙辰",
+  },
+  {
+    name: "寛保",
+    startYear: 1741,
+    endYear: 1743,
+    yomi: "かんぽう",
+    startEto: "辛酉",
+  },
+  {
+    name: "延享",
+    startYear: 1744,
+    endYear: 1747,
+    yomi: "えんきょう",
+    startEto: "甲子",
+  },
+  {
+    name: "寛延",
+    startYear: 1748,
+    endYear: 1750,
+    yomi: "かんえん",
+    startEto: "戊辰",
+  },
+  {
+    name: "宝暦",
+    startYear: 1751,
+    endYear: 1763,
+    yomi: "ほうれき",
+    startEto: "辛未",
+  },
+  {
+    name: "明和",
+    startYear: 1764,
+    endYear: 1771,
+    yomi: "めいわ",
+    startEto: "甲申",
+  },
+  {
+    name: "安永",
+    startYear: 1772,
+    endYear: 1780,
+    yomi: "あんえい",
+    startEto: "壬辰",
+  },
+  {
+    name: "天明",
+    startYear: 1781,
+    endYear: 1788,
+    yomi: "てんめい",
+    startEto: "辛丑",
+  },
+  {
+    name: "寛政",
+    startYear: 1789,
+    endYear: 1800,
+    yomi: "かんせい",
+    startEto: "己酉",
+  },
+  {
+    name: "享和",
+    startYear: 1801,
+    endYear: 1803,
+    yomi: "きょうわ",
+    startEto: "辛酉",
+  },
+  {
+    name: "文化",
+    startYear: 1804,
+    endYear: 1817,
+    yomi: "ぶんか",
+    startEto: "甲子",
+  },
+  {
+    name: "文政",
+    startYear: 1818,
+    endYear: 1829,
+    yomi: "ぶんせい",
+    startEto: "戊寅",
+  },
+  {
+    name: "天保",
+    startYear: 1830,
+    endYear: 1843,
+    yomi: "てんぽう",
+    startEto: "庚寅",
+  },
+  {
+    name: "弘化",
+    startYear: 1844,
+    endYear: 1847,
+    yomi: "こうか",
+    startEto: "甲辰",
+  },
+  {
+    name: "嘉永",
+    startYear: 1848,
+    endYear: 1853,
+    yomi: "かえい",
+    startEto: "戊申",
+  },
+  {
+    name: "安政",
+    startYear: 1854,
+    endYear: 1859,
+    yomi: "あんせい",
+    startEto: "甲寅",
+  },
+  {
+    name: "万延",
+    startYear: 1860,
+    endYear: 1860,
+    yomi: "まんえん",
+    startEto: "庚申",
+  },
+  {
+    name: "文久",
+    startYear: 1861,
+    endYear: 1863,
+    yomi: "ぶんきゅう",
+    startEto: "辛酉",
+  },
+  {
+    name: "元治",
+    startYear: 1864,
+    endYear: 1864,
+    yomi: "げんじ",
+    startEto: "甲子",
+  },
+  {
+    name: "慶応",
+    startYear: 1865,
+    endYear: 1867,
+    yomi: "けいおう",
+    startEto: "乙丑",
+  },
+  {
+    name: "明治",
+    startYear: 1868,
+    endYear: 1911,
+    yomi: "めいじ",
+    startEto: "戊辰",
+  },
+  {
+    name: "大正",
+    startYear: 1912,
+    endYear: 1925,
+    yomi: "たいしょう",
+    startEto: "壬子",
+  },
+  {
+    name: "昭和",
+    startYear: 1926,
+    endYear: 1988,
+    yomi: "しょうわ",
+    startEto: "丙寅",
+  },
+  {
+    name: "平成",
+    startYear: 1989,
+    endYear: 2018,
+    yomi: "へいせい",
+    startEto: "己巳",
+  },
+  {
+    name: "令和",
+    startYear: 2019,
+    endYear: null,
+    yomi: "れいわ",
+    startEto: "己亥",
+  },
 ];
-
-function populateSelectBoxes() {
-  const era1 = document.getElementById("era1");
-  const era2 = document.getElementById("era2");
-
-  eraList.forEach((item) => {
-    const label = `${item.name}（${item.year}）`;
-
-    const option1 = document.createElement("option");
-    option1.value = item.name;
-    option1.textContent = label;
-    option1.title = item.yomi;
-    era1.appendChild(option1);
-
-    const option2 = document.createElement("option");
-    option2.value = item.name;
-    option2.textContent = label;
-    option2.title = item.yomi;
-    era2.appendChild(option2);
-  });
-}
-
-function updateYomi(selectId, yomiId) {
-  const select = document.getElementById(selectId);
-  const selectedOption = select.options[select.selectedIndex];
-  const yomi = selectedOption.title || "（よみがな不明）";
-  document.getElementById(yomiId).textContent = `よみがな：${yomi}`;
-}
-// 元号を比べる
-function compareEras() {
-  // 選んだ元号を取得
-  const e1 = document.getElementById("era1").value;
-  const e2 = document.getElementById("era2").value;
-  // それぞれの元号の「開始年（西暦）」を取得
-  const y1 = eraList.find((e) => e.name === e1).year;
-  const y2 = eraList.find((e) => e.name === e2).year;
-  // 結果を表示する要素を取得
-  const result = document.getElementById("result");
-  // 読み仮名を更新する
-  updateYomi("era1", "yomi1");
-  updateYomi("era2", "yomi2");
-
-  // 比較結果を表示
-  if (y1 > y2) {
-    const diff = y1 - y2;
-    result.textContent = `${e1}は${e2}の${diff}年後に始まった元号だよ`;
-  } else if (y1 < y2) {
-    const diff = y2 - y1;
-    result.textContent = `${e2}の方が${diff}年後に始まった元号だよ`;
-  } else {
-    result.textContent = `どっちも ${y1} 年スタートだよ`;
-  }
-}
-populateSelectBoxes();
-
-$(document).ready(function () {
-  $("#era1, #era2").select2({
-    matcher: function (params, data) {
-      if ($.trim(params.term) === "") return data;
-
-      const term = params.term.toLowerCase();
-      const text = data.text.toLowerCase();
-      const title = (data.element.title || "").toLowerCase();
-
-      if (text.includes(term) || title.includes(term)) {
-        return data;
-      }
-      return null;
-    },
-  });
-
-  // 選択時によみがな表示も更新
-  $("#era1").on("change", function () {
-    updateYomi("era1", "yomi1");
-  });
-  $("#era2").on("change", function () {
-    updateYomi("era2", "yomi2");
-  });
-
-  // 選んだらすぐ比較！
-  $("#era1, #era2").on("change", function () {
-    updateYomi("era1", "yomi1");
-    updateYomi("era2", "yomi2");
-    compareEras(); // 自動判定！
-  });
-});
