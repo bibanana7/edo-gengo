@@ -36,11 +36,13 @@
             v-for="(era, index) in eraList"
             :key="era.name + '-' + index"
           >
-            <tr @click="toggleEto(era.name)" style="cursor: pointer">
+            <tr>
               <td><strong>{{ era.name }}</strong></td>
               <td>{{ era.yomi }}</td>
               <td>{{ era.startYear }}年〜</td>
-              <td>{{ era.startEto }}</td>
+              <td @click="toggleEto(era.name)" style="cursor: pointer">
+                {{ era.startEto }}
+              </td>
             </tr>
 
             <!-- 干支年表示 -->

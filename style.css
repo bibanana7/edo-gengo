@@ -5,15 +5,15 @@
   box-sizing: inherit;
 }
 
+:root {
+  --main-color: #6088c6;
+  --secondary-color: #eb8686;
+}
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
-}
-
-:root {
-  --main-color: #6088c6;
-  --secondary-color: #eb8686;
 }
 
 body {
@@ -23,14 +23,17 @@ body {
     "Hiragino Sans", Meiryo, sans-serif;
   font-size: 1.6rem;
 }
+
 .select2-container {
   width: 300px !important;
 }
+
 select {
   font-size: 1.2em;
   margin: 0.5em;
   padding: 1em;
 }
+
 #result,
 .yomi {
   margin-top: 1em;
@@ -41,7 +44,7 @@ select {
 table {
   border-collapse: collapse;
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 table tr {
@@ -74,22 +77,15 @@ button {
   display: inline-block;
   padding: 1rem 4rem;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
   letter-spacing: 0.1em;
-  color: #212529;
   border-radius: 0.5rem;
   overflow: hidden;
-  padding: 1.5rem 6rem;
   color: #fff;
-  border-radius: 0;
   background: #000;
 }
 
@@ -143,5 +139,10 @@ button {
     width: 100% !important;
     max-width: 500px;
     box-sizing: border-box;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
 }
