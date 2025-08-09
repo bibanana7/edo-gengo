@@ -1,7 +1,6 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -11,7 +10,6 @@
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -47,31 +45,45 @@ table {
   max-width: 800px;
   margin: 1em auto;
 }
+
 table tr {
   background-color: #e6f1f6;
 }
+
 table tr:nth-child(odd) {
   background-color: #fff;
 }
+
 table th,
 table td {
   padding: 1em;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }
+
 table th {
   font-weight: bold;
-  text-align: center;
   width: 20%;
   min-width: 4em;
 }
+
+td[role="button"] {
+  cursor: pointer;
+}
+
+tr.expand td {
+  background: #fafafa;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
   gap: 1em;
   margin: 2rem 0;
 }
+
 button {
   font-size: 1.6rem;
-  font-weight: 700;
   line-height: 1.5;
   position: relative;
   display: inline-block;
@@ -92,40 +104,23 @@ button {
 .select2-search--dropdown .select2-search__field {
   padding: 8px;
 }
+
 .era1 {
   color: var(--main-color);
 }
+
 .era2 {
   color: var(--secondary-color);
 }
+
 ul.eto-list {
   padding-left: 1.25rem;
-  list-style-type: disc;
-  list-style-position: inside;
   list-style: none;
   display: inline-block;
-}
-
-td[role="button"] {
-  cursor: pointer;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th,
-td {
-  border-bottom: 1px solid #ddd;
-  padding: 0.5rem;
   text-align: left;
 }
 
-tr.expand td {
-  background: #fafafa;
-}
-
 /* スマホ用スタイル */
-/* stylelint-disable-next-line */
 @media screen and (max-width: 768px) {
   body {
     font-family: sans-serif;
@@ -154,6 +149,7 @@ tr.expand td {
     display: block;
     margin: 0.5em 0;
   }
+
   .select2-container .select2-selection--single {
     height: 48px;
     padding: 10px;
@@ -161,16 +157,18 @@ tr.expand td {
     line-height: 28px;
     border-radius: 8px;
   }
+
   .select2-container {
     width: 100% !important;
     max-width: 500px;
-    box-sizing: border-box;
   }
+
   .buttons {
     flex-direction: column;
     align-items: center;
     gap: 0;
   }
+
   .eto-list ul {
     padding-left: 0;
   }
