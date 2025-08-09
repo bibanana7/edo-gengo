@@ -98,21 +98,30 @@ button {
 .era2 {
   color: var(--secondary-color);
 }
-
-.eto-list {
-  display: block;
-}
-
-.eto-list ul {
+ul.eto-list {
+  padding-left: 1.25rem;
   list-style-type: disc;
   list-style-position: inside;
   list-style: none;
   display: inline-block;
 }
 
-.eto-list ul li {
-  padding: 0.5em;
+td[role="button"] {
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem;
   text-align: left;
+}
+
+tr.expand td {
+  background: #fafafa;
 }
 
 /* スマホ用スタイル */
