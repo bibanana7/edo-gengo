@@ -17,29 +17,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app">
-      <h1>江戸〜元号の新しさ比較ツール</h1>
-      <p>
-        2つの元号を選んで、新しい方を簡単に比べられます。<br />
-        選択メニューから元号のふりがなで検索も可能です。<br />
-        元号は江戸時代から現在までを収録しています。
-      </p>
-      <label for="era1" class="era1">1つ目の元号：</label>
-      <select id="era1"></select>
-      <div class="yomi" id="yomi1">（よみがな表示）</div>
+    <div class="content">
+      <div id="app">
+        <h1>江戸〜元号の新しさ比較ツール</h1>
+        <p>
+          2つの元号を選んで、新しい方を簡単に比べられます。<br />
+          選択メニューから元号のふりがなで検索も可能です。<br />
+          元号は江戸時代から現在までを収録しています。
+        </p>
+        <label for="era1" class="era1">1つ目の元号：</label>
+        <select id="era1"></select>
+        <div class="yomi" id="yomi1">（よみがな表示）</div>
 
-      <br />
+        <br />
 
-      <label for="era2" class="era2">2つ目の元号：</label>
-      <select id="era2"></select>
-      <div class="yomi" id="yomi2">（よみがな表示）</div>
-      <br />
-      <div
-        id="result"
-        style="margin-top: 1em; font-size: 1.4em; font-weight: bold"
-      ></div>
-      <br />
-      <button @click="goToList"><span>元号一覧へジャンプ</span></button>
+        <label for="era2" class="era2">2つ目の元号：</label>
+        <select id="era2"></select>
+        <div class="yomi" id="yomi2">（よみがな表示）</div>
+        <br />
+        <div
+          id="result"
+          style="margin-top: 1em; font-size: 1.4em; font-weight: bold"
+        ></div>
+        <br />
+        <button @click="goToList"><span>元号一覧へジャンプ</span></button>
+      </div>
+      <!--content-->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -47,7 +50,6 @@
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
     <!-- 本番用 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-
     <script>
       Vue.createApp({
         methods: {
@@ -143,5 +145,20 @@
         });
       });
     </script>
+    <footer>
+      <p>
+        このツールは個人利用を目的として作成しました。<br />
+        不具合など重大な問題がある場合を除き、
+        申し訳ありませんが、要望への対応は行っておりません。
+      </p>
+      <p>
+        <a
+          href="https://github.com/bibanana7/edo-gengo"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Github</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
