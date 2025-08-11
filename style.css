@@ -5,8 +5,9 @@
 }
 
 :root {
-  --main-color: #6088c6;
-  --secondary-color: #eb8686;
+  --main-color: #224b8f;
+  --secondary-color: #d45750;
+  --accent-color: #745399;
 }
 
 html {
@@ -46,11 +47,16 @@ table {
   margin: 1em auto;
 }
 
-table tr {
-  background-color: #e6f1f6;
+table thead tr {
+  background-color: var(--main-color);
+  color: #fff;
 }
 
-table tr:nth-child(odd) {
+table tbody tr {
+  background-color: #e6e6e6;
+}
+
+table tbody tr:nth-child(odd) {
   background-color: #fff;
 }
 
@@ -58,7 +64,6 @@ table th,
 table td {
   padding: 1em;
   text-align: center;
-  border-bottom: 1px solid #ddd;
 }
 
 table th {
@@ -98,7 +103,8 @@ button {
   border-radius: 0.5rem;
   overflow: hidden;
   color: #fff;
-  background: #000;
+  background: var(--accent-color);
+  border: none;
 }
 
 .select2-search--dropdown .select2-search__field {
