@@ -11,15 +11,6 @@
   <body>
     <div id="app">
       <h1>江戸〜 元号一覧</h1>
-      <div class="buttons">
-        <button @click="sortByYomi">
-          <span
-            >読み仮名で並び替え（{{ sortOrder === 'asc' ? 'あ→ん' : 'ん→あ'
-            }}）</span
-          >
-        </button>
-        <button @click="resetToOriginalOrder"><span>年号順に戻す</span></button>
-      </div>
       <p>干支はクリックで展開します。</p>
       <table>
         <thead>
@@ -85,68 +76,10 @@
         >
       </p>
     </footer>
-    <script src="script.js"></script>
+    <script src="list.js"></script>
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
     <!-- 本番用 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <script>
-      Vue.createApp({
-        data() {
-          return {
-            eraList: [...eraList],
-            originalEraList: [...eraList],
-            sortOrder: "asc",
-            expandedEra: null,
-          };
-        },
-        methods: {
-          toggleEto(name) {
-            this.expandedEra = this.expandedEra === name ? null : name;
-          },
-          getEtoYears(era) {
-            const result = [];
-            const startIndex = etoList.findIndex(
-              (e) => e.name === era.startEto
-            );
-            if (startIndex === -1) return result;
-            for (
-              let year = era.startYear;
-              year <= (era.endYear || era.startYear);
-              year++
-            ) {
-              const idx = (startIndex + (year - era.startYear)) % 60;
-              const etoObj = etoList[idx];
-              result.push({
-                year, // 西暦
-                gengouYear: year - era.startYear + 1, // 元年〜n年
-                etoName: etoObj.name,
-                etoYomi: etoObj.Etoyomi,
-              });
-            }
-            return result;
-          },
-          sortByYomi() {
-            if (this.sortOrder === "asc") {
-              this.eraList.sort((a, b) => a.yomi.localeCompare(b.yomi, "ja"));
-              this.sortOrder = "desc";
-            } else {
-              this.eraList.sort((a, b) => b.yomi.localeCompare(a.yomi, "ja"));
-              this.sortOrder = "asc";
-            }
-          },
-          resetToOriginalOrder() {
-            this.eraList = [...this.originalEraList];
-            this.sortOrder = "asc";
-          },
-          goToList() {
-            window.location.href = "index.html";
-          },
-        },
-      }).mount("#app");
-
-      // 最初の要素の分割代入
-      const era = window.eraList[0];
-      const { startYear, endYear, startEto } = era;
-    </script>
+    <script src="detail.js"></script>
   </body>
 </html>
