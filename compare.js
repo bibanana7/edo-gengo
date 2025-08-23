@@ -91,3 +91,20 @@ $(document).ready(function () {
     compareEras(); // 自動判定！
   });
 });
+
+function setPlaceholder(text) {
+  setTimeout(() => {
+    const input = document.querySelector(".select2-search__field");
+    if (input) {
+      input.placeholder = text;
+    }
+  }, 10); //select2がinputを生成するまでちょっと待つ
+}
+
+$("#era1").on("select2:open", function () {
+  setPlaceholder("元号のふりがなで検索");
+});
+
+$("#era2").on("select2:open", function () {
+  setPlaceholder("元号のふりがなで検索");
+});
